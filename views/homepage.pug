@@ -1,0 +1,25 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Custom Object Table
+        .breadcrumbs
+            a(href="/update-cobj") Add to this table
+        .form-wrapper
+            table
+                thead
+                    tr
+                        td Name
+                        td Age
+                        td Breed
+                        td Gender
+                tbody
+                    each item in data
+                        tr 
+                            td #{item.properties.name}
+                            td #{item.properties.age}
+                            td #{item.properties.breed}
+                            td #{item.properties.gender}

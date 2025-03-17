@@ -44,3 +44,16 @@ input[type="submit"] {
 .error {
     color: red;
 }
+
+table {
+    width: 100%;
+    border-spacing: 2px;
+}
+
+table thead td {
+    background-color: #FFAAAA;
+}
+
+table tbody td {
+    border: 1px solid black;
+}

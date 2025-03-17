@@ -26,8 +26,20 @@ const hsClient = axios.create({
     },
 });
 
-// app.get('/', () => {
-// });
+app.get('/', async (req, res) => {
+    try {
+        const resp = await hsClient.get(`crm/v3/objects/${ process.env.CUSTOM_OBJECT_ID }?properties=name,age,breed,gender`);
+        const data = resp.data.results;
+
+        res.render('homepage', {
+            title: 'Home page | Integrating With HubSpot I Practicum',
+            data,
+        });      
+    } catch (error) {
+        console.error(error);
+        res.send('Something went wrong');
+    }
+});
 
 app.get('/update-cobj', async (req, res) => {
     res.render('updates', {

@@ -1,0 +1,24 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Create a new record
+        .breadcrumbs
+            a(href="/") Home 
+            span -> Create a new record
+        .form-wrapper
+            form(method="POST" action="/update-cobj")
+                label Name
+                input(name="name" required)
+                label Age
+                input(name="age" type="number" min="0")
+                label Breed
+                input(name="breed")
+                label Gender
+                select(name="gender")
+                    option(value="male") Male
+                    option(value="female") Female
+                input(type="submit" value="Submit")

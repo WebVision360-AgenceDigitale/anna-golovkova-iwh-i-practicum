@@ -10,6 +10,8 @@ html
             a(href="/") Home 
             span -> Create a new record
         .form-wrapper
+            if error
+                .error #{error}
             form(method="POST" action="/update-cobj")
                 label Name
                 input(name="name" required)
